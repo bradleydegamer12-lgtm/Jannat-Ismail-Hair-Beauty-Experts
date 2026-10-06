@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jannat &amp; Ismail — Hair &amp; Beauty Experts | Protea Glen</title>
+<meta name="description" content="Jannat &amp; Ismail Hair &amp; Beauty Experts — family-run salon in Protea Glen offering barbering, fades, braids, colour, makeup, nails and skincare. Walk-ins welcome, WhatsApp to book.">
+<meta property="og:title" content="Jannat &amp; Ismail — Hair &amp; Beauty Experts">
+<meta property="og:description" content="Cuts, colour &amp; care — close to home. Family-run salon in Protea Glen.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F5F0E9;
+    --paper:#FCFAF6;
+    --ink:#1A130E;
+    --ink-soft:#5B4A3D;
+    --copper:#B45B32;
+    --copper-deep:#8E4322;
+    --sand:#E7DBC9;
+    --line:rgba(26,19,14,.15);
+    --line-soft:rgba(26,19,14,.08);
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+    --wrap:1200px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  ::selection{background:var(--copper);color:#fff}
+
+  .wrap{width:min(100% - 2.5rem, var(--wrap));margin-inline:auto}
+
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;color:var(--copper);margin:0 0 1.1rem;
+    display:flex;align-items:center;gap:.75rem;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--copper);display:block}
+
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;line-height:1.02;margin:0}
+  h1{font-size:clamp(2.9rem,7.4vw,6.2rem)}
+  h2{font-size:clamp(2.15rem,5vw,3.75rem);line-height:1.05}
+  h3{font-size:clamp(1.35rem,2.4vw,1.75rem);line-height:1.15}
+  em{font-style:italic;font-weight:400;color:var(--copper)}
+  p{margin:0 0 1.1rem}
+  .lede{font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--ink-soft);max-width:56ch}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.65rem;
+    padding:.95rem 1.7rem;border-radius:2px;border:1px solid var(--ink);
+    font-family:var(--sans);font-size:.82rem;font-weight:600;
+    letter-spacing:.13em;text-transform:uppercase;text-decoration:none;
+    background:var(--ink);color:var(--bone);cursor:pointer;
+    transition:background .35s ease,color .35s ease,border-color .35s ease,transform .35s ease;
+  }
+  .btn:hover{background:var(--copper);border-color:var(--copper);color:#fff;transform:translateY(-2px)}
+  .btn--ghost{background:transparent;color:var(--ink)}
+  .btn--ghost:hover{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+  .btn--light{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+  .btn--light:hover{background:var(--copper);border-color:var(--copper);color:#fff}
+
+  /* ---------- header ---------- */
+  .site-head{
+    position:sticky;top:0;z-index:60;
+    background:rgba(245,240,233,.92);
+    backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:74px}
+  .mark{display:flex;align-items:baseline;gap:.6rem;text-decoration:none;font-family:var(--serif);font-size:1.32rem;letter-spacing:-.02em;white-space:nowrap}
+  .mark span{font-style:italic;color:var(--copper)}
+  .mark small{font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .nav{display:flex;align-items:center;gap:2.1rem}
+  .nav a{
+    text-decoration:none;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;
+    font-weight:500;position:relative;padding:.35rem 0;color:var(--ink)
+  }
+  .nav a::after{
+    content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--copper);
+    transition:width .35s ease
+  }
+  .nav a:hover::after{width:100%}
+  .head-cta{display:flex;align-items:center;gap:.9rem}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:transparent;border-radius:2px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+  .burger i{display:block;width:18px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s}
+  .mobile-nav{display:none;flex-direction:column;gap:.25rem;padding:1rem 0 1.6rem;border-top:1px solid var(--line-soft)}
+  .mobile-nav.open{display:flex}
+  .mobile-nav a{text-decoration:none;padding:.75rem 0;font-family:var(--serif);font-size:1.55rem;border-bottom:1px solid var(--line-soft)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(3rem,7vw,5.6rem) 0 clamp(2.5rem,5vw,4rem);position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero h1{margin-bottom:1.5rem}
+  .hero .lede{margin-bottom:2.15rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-note{margin-top:2.25rem;display:flex;flex-wrap:wrap;gap:1.4rem 2.4rem;border-top:1px solid var(--line);padding-top:1.4rem}
+  .hero-note div{max-width:190px}
+  .hero-note strong{display:block;font-family:var(--serif);font-size:1.62rem;line-height:1;letter-spacing:-.02em}
+  .hero-note span{font-size:.79rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+
+  .frame{position:relative;isolation:isolate}
+  .frame::before{
+    content:"";position:absolute;inset:0;border:1px solid var(--copper);
+    transform:translate(18px,18px);z-index:-1;
+  }
+  .frame img{width:100%;height:clamp(380px,58vw,620px);object-fit:cover;background:var(--sand)}
+  .frame-tag{
+    position:absolute;left:-14px;bottom:26px;background:var(--ink);color:var(--bone);
+    padding:.85rem 1.15rem;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+    writing-mode:horizontal-tb;
+  }
+  .frame-tag b{color:var(--copper);font-family:var(--serif);font-style:italic;letter-spacing:0;font-size:.95rem;text-transform:none}
+
+  /* ---------- marquee ---------- */
+  .marquee{background:var(--copper);color:#FCF4EE;overflow:hidden;padding:1.15rem 0;border-block:1px solid var(--copper-deep)}
+  .marquee-track{display:flex;gap:2.6rem;white-space:nowrap;width:max-content;animation:slide 34s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee span{font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,2rem);letter-spacing:-.01em;display:flex;align-items:center;gap:2.6rem}
+  .marquee span i{font-style:italic;opacity:.62}
+  .marquee span::after{content:"◦";opacity:.55;font-family:var(--sans);font-size:.7em}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(4.2rem,8vw,7.2rem) 0}
+  .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:end;margin-bottom:clamp(2.4rem,5vw,3.6rem)}
+  .sec-head p{margin:0;color:var(--ink-soft)}
+
+  /* about */
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2.2rem,5vw,4.4rem);align-items:center}
+  .about-media{position:relative}
+  .about-media img{width:100%;height:clamp(360px,48vw,520px);object-fit:cover;background:var(--sand)}
+  .about-media .inset{
+    position:absolute;right:-22px;bottom:-38px;width:min(46%,220px);aspect-ratio:1;
+    object-fit:cover;border:8px solid var(--paper);background:var(--sand)
+  }
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin:2.15rem 0 2.25rem;border-top:1px solid var(--line);padding-top:1.65rem}
+  .stats strong{display:block;font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.55rem);line-height:1;letter-spacing:-.03em}
+  .stats span{font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+  .ticks{list-style:none;padding:0;margin:0;display:grid;gap:.72rem}
+  .ticks li{display:flex;gap:.85rem;align-items:flex-start;font-size:.98rem;color:var(--ink-soft)}
+  .ticks li::before{content:"";width:7px;height:7px;background:var(--copper);margin-top:.62rem;flex:none}
+
+  /* services index */
+  .svc-wrap{position:relative}
+  .svc-list{border-top:1px solid var(--line)}
+  .svc-row{
+    display:grid;grid-template-columns:64px 1fr auto;gap:1.6rem;align-items:baseline;
+    padding:1.55rem .4rem;border-bottom:1px solid var(--line);position:relative;
+    text-decoration:none;transition:background .4s ease,padding .4s ease,color .4s ease;
+  }
+  .svc-row:hover{background:var(--ink);color:var(--paper);padding-left:1.4rem;padding-right:1.4rem}
+  .svc-num{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--copper)}
+  .svc-name{font-family:var(--serif);font-size:clamp(1.42rem,3.1vw,2.15rem);line-height:1.1;letter-spacing:-.02em}
+  .svc-desc{display:block;font-family:var(--sans);font-size:.93rem;letter-spacing:.01em;color:var(--ink-soft);margin-top:.42rem;max-width:52ch}
+  .svc-row:hover .svc-desc{color:rgba(252,246,240,.72)}
+  .svc-price{font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.32rem);white-space:nowrap;letter-spacing:-.01em}
+  .svc-price em{color:var(--copper);font-size:.82em}
+  .svc-peek{
+    position:absolute;top:0;left:0;width:230px;height:290px;pointer-events:none;
+    opacity:0;z-index:5;transform:translate(-50%,-50%) scale(.92) rotate(-3deg);
+    transition:opacity .35s ease,transform .35s ease;
+  }
+  .svc-peek.show{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+  .svc-peek img{width:100%;height:100%;object-fit:cover;background:var(--sand)}
+  .svc-foot{margin-top:1.9rem;display:flex;flex-wrap:wrap;gap:1.1rem 1.6rem;align-items:center;color:var(--ink-soft);font-size:.92rem}
+
+  /* gallery */
+  .gallery{background:var(--ink);color:var(--paper)}
+  .gallery .eyebrow{color:var(--sand)}
+  .gallery .eyebrow::before{background:var(--sand)}
+  .gallery h2 em{color:var(--sand)}
+  .mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .mosaic figure{margin:0;overflow:hidden;background:#2b211a}
+  .mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.3,1),opacity .5s}
+  .mosaic figure:hover img{transform:scale(1.07)}
+  .m1{grid-column:span 2;grid-row:span 2;aspect-ratio:1/1}
+  .m2{aspect-ratio:1/1}
+  .m3{aspect-ratio:1/1}
+  .m4{aspect-ratio:1/1}
+  .m5{aspect-ratio:1/1}
+  .m6{grid-column:span 2;aspect-ratio:2/1}
+
+  /* team */
+  .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,3.6vw,2.8rem)}
+  .person{background:var(--paper);border:1px solid var(--line-soft);display:flex;flex-direction:column}
+  .person img{width:100%;aspect-ratio:4/4.4;object-fit:cover;background:var(--sand)}
+  .person-body{padding:1.75rem 1.75rem 2rem}
+  .person-role{font-size:.72rem;letter-spacing:.21em;text-transform:uppercase;color:var(--copper);font-weight:600;margin-bottom:.75rem}
+  .person h3{margin-bottom:.85rem}
+  .person p{color:var(--ink-soft);font-size:.97rem;margin-bottom:1.15rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+  .chip{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:500;padding:.42rem .82rem;border:1px solid var(--line);border-radius:100px;color:var(--ink-soft)}
+
+  /* reviews */
+  .reviews{background:var(--sand)}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .quote{background:var(--paper);padding:2.15rem 1.9rem;display:flex;flex-direction:column;gap:1.15rem;border-top:3px solid var(--copper)}
+  .quote blockquote{margin:0;font-family:var(--serif);font-size:1.18rem;line-height:1.45;letter-spacing:-.012em;flex:1}
+  .stars{color:var(--copper);letter-spacing:.28em;font-size:.82rem}
+  .who{display:flex;align-items:center;gap:.85rem}
+  .who b{font-size:.95rem;font-weight:600}
+  .who span{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);display:block}
+  .who .dot{width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--bone);display:grid;place-items:center;font-family:var(--serif);font-size:.95rem}
+
+  /* faq */
+  .faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.2rem);align-items:start}
+  .acc{border-top:1px solid var(--line)}
+  .acc-item{border-bottom:1px solid var(--line)}
+  .acc-q{
+    width:100%;background:none;border:0;text-align:left;cursor:pointer;
+    padding:1.45rem 2.6rem 1.45rem 0;position:relative;
+    font-family:var(--serif);font-size:clamp(1.12rem,2.1vw,1.42rem);color:var(--ink);letter-spacing:-.012em;
+  }
+  .acc-q::after{
+    content:"+";position:absolute;right:.25rem;top:50%;transform:translateY(-50%);
+    font-family:var(--sans);font-size:1.55rem;color:var(--copper);transition:transform .35s ease
+  }
+  .acc-item.open .acc-q::after{transform:translateY(-50%) rotate(45deg)}
+  .acc-a{max-height:0;overflow:hidden;transition:max-height .45s ease}
+  .acc-a p{padding:0 2.6rem 1.55rem 0;color:var(--ink-soft);font-size:.98rem;margin:0}
+
+  /* booking */
+  .book{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+  .book .eyebrow{color:var(--sand)}
+  .book .eyebrow::before{background:var(--sand)}
+  .book h2 em{color:var(--sand)}
+  .book-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(2.2rem,5vw,4.4rem);align-items:start}
+  .info-list{list-style:none;padding:0;margin:1.9rem 0 0;display:grid;gap:1.35rem}
+  .info-list li{border-top:1px solid rgba(252,250,246,.18);padding-top:1.15rem}
+  .info-list b{display:block;font-size:.72rem;letter-spacing:.21em;text-transform:uppercase;color:var(--sand);margin-bottom:.55rem;font-weight:600}
+  .info-list p,.info-list a{margin:0;color:rgba(252,250,246,.82);text-decoration:none;font-size:1.02rem;line-height:1.55}
+  .info-list a:hover{color:var(--sand)}
+  .hours{display:grid;grid-template-columns:auto 1fr;gap:.45rem 1.5rem;font-size:.98rem;color:rgba(252,250,246,.82)}
+  .hours b{font-weight:500;color:var(--paper)}
+
+  .form{background:var(--paper);color:var(--ink);padding:clamp(1.85rem,3.6vw,2.75rem)}
+  .form h3{margin-bottom:.35rem}
+  .form .sub{color:var(--ink-soft);font-size:.95rem;margin-bottom:1.65rem}
+  .field{margin-bottom:1.15rem}
+  .field label{display:block;font-size:.71rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-bottom:.5rem}
+  .field input,.field select,.field textarea{
+    width:100%;padding:.85rem 1rem;border:1px solid var(--line);background:var(--bone);
+    border-radius:2px;font-family:var(--sans);font-size:1rem;color:var(--ink);
+    transition:border-color .3s ease,background .3s ease
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--copper);background:#fff}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .form .btn{width:100%;justify-content:center;margin-top:.55rem}
+  .form .tiny{font-size:.79rem;color:var(--ink-soft);margin:.95rem 0 0;text-align:center}
+
+  /* footer */
+  footer{background:var(--bone);padding:clamp(3.2rem,6vw,4.6rem) 0 2.2rem;border-top:1px solid var(--line)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.2rem;padding-bottom:2.6rem;border-bottom:1px solid var(--line)}
+  .foot-top h4{font-family:var(--sans);font-size:.72rem;letter-spacing:.21em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 1.15rem;font-weight:600}
+  .foot-top ul{list-style:none;padding:0;margin:0;display:grid;gap:.62rem}
+  .foot-top a{text-decoration:none;font-size:.96rem;color:var(--ink-soft)}
+  .foot-top a:hover{color:var(--copper)}
+  .foot-blurb{color:var(--ink-soft);font-size:.98rem;max-width:34ch;margin:1rem 0 0}
+  .foot-word{
+    font-family:var(--serif);font-size:clamp(2.4rem,9.4vw,8.6rem);line-height:.95;letter-spacing:-.035em;
+    margin:2.4rem 0 1.4rem;color:var(--ink);opacity:.93
+  }
+  .foot-word i{font-style:italic;color:var(--copper)}
+  .foot-bot{display:flex;flex-wrap:wrap;gap:.9rem 1.8rem;justify-content:space-between;align-items:center;font-size:.81rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.55rem}
+  .foot-bot a{text-decoration:none}
+  .foot-bot a:hover{color:var(--copper)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.22,.7,.3,1),transform .8s cubic-bezier(.22,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:.8rem 1.2rem;z-index:100}
+  .skip:focus{left:12px;top:12px}
+
+  @media (max-width:1000px){
+    .hero-grid,.about-grid,.book-grid,.faq-grid{grid-template-columns:1fr}
+    .about-media .inset{right:0;bottom:-28px}
+    .quotes{grid-template-columns:1fr}
+    .team-grid{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:860px){
+    .nav{display:none}
+    .burger{display:flex}
+    .head-cta .btn{padding:.8rem 1.15rem;font-size:.72rem}
+    .mark small{display:none}
+    .mosaic{grid-template-columns:repeat(2,1fr)}
+    .m1,.m6{grid-column:span 2;grid-row:auto}
+    .m6{aspect-ratio:2/1}
+    .svc-row{grid-template-columns:38px 1fr;gap:.85rem 1.15rem}
+    .svc-price{grid-column:2;justify-self:start}
+    .svc-peek{display:none}
+    .sec-head{grid-template-columns:1fr;gap:1.25rem}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .field-row{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr;gap:1.05rem}
+    .foot-top{grid-template-columns:1fr}
+    .frame::before{transform:translate(10px,10px)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="#top">
+      Jannat <span>&amp;</span> Ismail
+      <small>Hair &amp; Beauty</small>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">Salon</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#team">Team</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="head-cta">
+      <a class="btn" href="#book">Book now</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="wrap"><nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#about">Salon</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#team">Team</a>
+    <a href="#faq">FAQ</a>
+    <a href="#book">Book now</a>
+  </nav></div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Protea Glen · Est. 2013</p>
+        <h1>Cuts, colour<br>&amp; care —<br><em>close to home</em>.</h1>
+        <p class="lede">A neighbourhood salon where barbering and beauty live under one roof. Family-run, sharp on the details, and warm enough that you'll stay for the coffee. Walk-ins welcome.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#book">Book on WhatsApp</a>
+          <a class="btn btn--ghost" href="#services">See services &amp; prices</a>
+        </div>
+        <div class="hero-note">
+          <div><strong>4.9★</strong><span>Average client rating</span></div>
+          <div><strong>12 000+</strong><span>Heads &amp; faces served</span></div>
+          <div><strong>7 days</strong><span>Open every week</span></div>
+        </div>
+      </div>
+
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=80"
+             alt="Barber finishing a fresh haircut in the salon chair" width="1100" height="1400">
+        <div class="frame-tag">Master barber <b>&amp;</b> beauty studio</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Barbering</span><span>Fades</span><span>Braids</span><span>Colour</span><span>Makeup</span><span>Nails</span><span>Facials</span><span>Beard work</span>
+      <span>Barbering</span><span>Fades</span><span>Braids</span><span>Colour</span><span>Makeup</span><span>Nails</span><span>Facials</span><span>Beard work</span>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-media reveal">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=950&q=80"
+             alt="Stylist working at the salon" width="950" height="1150">
+        <img class="inset" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=520&q=80"
+             alt="Detail of barber tools on the counter" width="520" height="520">
+      </div>
+
+      <div class="reveal">
+        <p class="eyebrow">The salon</p>
+        <h2>Two experts.<br>One chair that's<br><em>always yours</em>.</h2>
+        <div class="stats">
+          <div><strong>13</strong><span>Years open</span></div>
+          <div><strong>2</strong><span>Specialists</span></div>
+          <div><strong>90%</strong><span>Regulars</span></div>
+        </div>
+        <p class="lede">Jannat trained in colour and skincare; Ismail trained in the chair. Together they built the kind of place where a dad can get a skin fade while his daughter gets knotless braids — and both leave grinning.</p>
+        <ul class="ticks">
+          <li>Two stations, no waiting-room chaos — appointments run on time</li>
+          <li>Products chosen for African hair and skin, not whatever's on special</li>
+          <li>Card, cash, SnapScan, EFT and Payflex all accepted</li>
+          <li>Kids are welcome and get their own little throne</li>
+        </ul>
+        <div class="hero-actions" style="margin-top:2rem">
+          <a class="btn btn--ghost" href="#team">Meet Jannat &amp; Ismail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">Services &amp; prices</p>
+          <h2>Everything, listed<br>plainly. <em>No surprises.</em></h2>
+        </div>
+        <p class="reveal">Prices are starting points — hair length, density and condition all play a part, so we confirm the quote before we start. Hover a service to see the work.</p>
+      </div>
+
+      <div class="svc-wrap">
+        <div class="svc-peek" id="peek" aria-hidden="true"><img src="" alt=""></div>
+
+        <div class="svc-list reveal">
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">01</span>
+            <span><span class="svc-name">Signature Cut</span><span class="svc-desc">Consultation, wash, precision cut and styling. Suits texture of every kind.</span></span>
+            <span class="svc-price">R150</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">02</span>
+            <span><span class="svc-name">Skin Fade &amp; Line-Up</span><span class="svc-desc">Blade-finished blend, razor-sharp edges, hot towel to close.</span></span>
+            <span class="svc-price">R180</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">03</span>
+            <span><span class="svc-name">Beard Sculpt &amp; Hot Towel</span><span class="svc-desc">Shaped to your jaw, trimmed, oiled and finished with a steam towel.</span></span>
+            <span class="svc-price">R120</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">04</span>
+            <span><span class="svc-name">Kids Cut <em>(under 12)</em></span><span class="svc-desc">Patient, quick and comfortable — first haircuts get a certificate.</span></span>
+            <span class="svc-price">R100</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">05</span>
+            <span><span class="svc-name">Braids — Cornrows &amp; Knotless</span><span class="svc-desc">Feed-in, knotless, tribal or simple lines. Hair included where quoted.</span></span>
+            <span class="svc-price">from R450</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">06</span>
+            <span><span class="svc-name">Wash, Blow-Dry &amp; Style</span><span class="svc-desc">Deep cleanse, steam treatment, silk press or curl definition.</span></span>
+            <span class="svc-price">from R250</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1522337094846-8a818192de1f?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">07</span>
+            <span><span class="svc-name">Colour &amp; Highlights</span><span class="svc-desc">Full colour, gloss, ombré or foil work with a bond-building treatment.</span></span>
+            <span class="svc-price">from R650</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">08</span>
+            <span><span class="svc-name">Makeup — Event &amp; Bridal</span><span class="svc-desc">Long-wear, flash-friendly, and matched properly to your skin tone.</span></span>
+            <span class="svc-price">from R550</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">09</span>
+            <span><span class="svc-name">Manicure &amp; Pedicure</span><span class="svc-desc">File, cuticle care, massage and gel or polish finish.</span></span>
+            <span class="svc-price">from R300</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">10</span>
+            <span><span class="svc-name">Facials &amp; Skincare</span><span class="svc-desc">Cleanse, exfoliate, extract and mask — tailored to your skin's mood.</span></span>
+            <span class="svc-price">from R400</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">11</span>
+            <span><span class="svc-name">Threading &amp; Waxing</span><span class="svc-desc">Brows shaped by hand, plus lip, chin, underarm and full-body waxing.</span></span>
+            <span class="svc-price">from R120</span>
+          </a>
+          <a class="svc-row" href="#book" data-img="https://images.unsplash.com/photo-1470259078422-826894b933aa?auto=format&fit=crop&w=520&q=80">
+            <span class="svc-num">12</span>
+            <span><span class="svc-name">The Full Works</span><span class="svc-desc">Cut, beard, facial and style in one sitting. Best gift in Protea Glen.</span></span>
+            <span class="svc-price">R750</span>
+          </a>
+        </div>
+
+        <div class="svc-foot reveal">
+          <span>Bridal packages, group bookings and home visits quoted on request.</span>
+          <a class="btn btn--ghost" href="#book">Get a quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">The work</p>
+          <h2>Fresh out the chair.<br><em>Every single day.</em></h2>
+        </div>
+        <p class="reveal" style="color:rgba(252,250,246,.72)">A few from the week — fades, braids, colour and the people who wore them best.</p>
+      </div>
+
+      <div class="mosaic reveal">
+        <figure class="m1"><img loading="lazy" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&h=900&q=80" alt="Barber shaping a haircut with clippers" width="900" height="900"></figure>
+        <figure class="m2"><img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=560&h=560&q=80" alt="Client smiling after her appointment" width="560" height="560"></figure>
+        <figure class="m3"><img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=560&h=560&q=80" alt="Client with a fresh beard trim" width="560" height="560"></figure>
+        <figure class="m4"><img loading="lazy" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=560&h=560&q=80" alt="Client showing off her styled hair" width="560" height="560"></figure>
+        <figure class="m5"><img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=560&h=560&q=80" alt="Client after a fresh cut and line-up" width="560" height="560"></figure>
+        <figure class="m6"><img loading="lazy" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1100&h=560&q=80" alt="Salon interior with barber chairs" width="1100" height="560"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">The team</p>
+          <h2>You'll be in<br><em>good hands</em>.</h2>
+        </div>
+        <p class="reveal">No rotating cast of strangers. You book with the person you trust, and they remember what you asked for last time.</p>
+      </div>
+
+      <div class="team-grid">
+        <article class="person reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=780&q=80" alt="Jannat, beauty director" width="780" height="860">
+          <div class="person-body">
+            <p class="person-role">Beauty Director</p>
+            <h3>Jannat</h3>
+            <p>Thirteen years of colour correction, bridal mornings and scalp care. Known for telling you honestly when your hair needs a break — and for never letting anyone leave with a colour she wouldn't wear herself.</p>
+            <div class="chips"><span class="chip">Colour</span><span class="chip">Braids</span><span class="chip">Makeup</span><span class="chip">Skincare</span></div>
+          </div>
+        </article>
+
+        <article class="person reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=780&q=80" alt="Ismail, master barber" width="780" height="860">
+          <div class="person-body">
+            <p class="person-role">Master Barber</p>
+            <h3>Ismail</h3>
+            <p>Fades, beard architecture and the kind of line-up that holds for two weeks. Trained in Hillbrow, refined over a decade in Protea Glen — and still the fastest scissor-over-comb in the neighbourhood.</p>
+            <div class="chips"><span class="chip">Fades</span><span class="chip">Beards</span><span class="chip">Kids</span><span class="chip">Classic cuts</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">Word of mouth</p>
+          <h2>What the chair says,<br><em>afterwards</em>.</h2>
+        </div>
+        <p class="reveal">Most new clients arrive because someone wouldn't stop talking about their last visit.</p>
+      </div>
+
+      <div class="quotes">
+        <article class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"Ismail did my fade before my brother's wedding. Two weeks later it still looked fresh in the photos. He's an artist."</blockquote>
+          <div class="who"><div class="dot">S</div><div><b>Sipho M.</b><span>Client since 2019</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"Jannat saved my hair after a bad relaxer somewhere else. She was honest with me about what it needed, and my hair has never been this healthy."</blockquote>
+          <div class="who"><div class="dot">T</div><div><b>Thandi R.</b><span>Colour &amp; care</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"Taking my kids for haircuts used to be a mission. Here they actually look forward to it. That tells you everything about how they run the place."</blockquote>
+          <div class="who"><div class="dot">L</div><div><b>Lerato N.</b><span>Family client</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="wrap faq-grid">
+      <div class="reveal">
+        <p class="eyebrow">Good to know</p>
+        <h2>Questions we get<br>every <em>week</em>.</h2>
+        <p class="lede" style="margin-top:1.35rem">Anything else, message us — we answer between clients, usually within the hour.</p>
+        <a class="btn btn--ghost" href="#book">Ask on WhatsApp</a>
+      </div>
+
+      <div class="acc reveal">
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Do I need an appointment?</button>
+          <div class="acc-a"><p>Walk-ins are welcome and we do our best to fit you in, but weekends and month-end fill up fast. Booking ahead means your slot is waiting and you skip the wait entirely.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">How do I book?</button>
+          <div class="acc-a"><p>Message us on WhatsApp with the service you want and a day that suits you. We'll confirm the time and give you an honest price estimate before you come in.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">What payment methods do you take?</button>
+          <div class="acc-a"><p>Cash, all major cards, SnapScan, EFT and Payflex for larger treatments. Bridal and group bookings require a 50% deposit to hold the date.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Do you do children's hair?</button>
+          <div class="acc-a"><p>Yes — Ismail is brilliant with little ones, and there's a booster seat for small kids. Under-fives get a discount, and every first haircut comes with a keepsake certificate.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Can you fix a colour or cut from elsewhere?</button>
+          <div class="acc-a"><p>Often, yes. Colour correction is quoted after a quick consultation so we can be honest about what your hair can handle in one session. Consultations are free.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Do you travel for weddings?</button>
+          <div class="acc-a"><p>We do bridal prep on location across Johannesburg and the Vaal. Tell us the date, the venue and how many people, and we'll send a package quote within a day.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOK ============ -->
+  <section class="book" id="book">
+    <div class="wrap book-grid">
+      <div class="reveal">
+        <p class="eyebrow">Visit us</p>
+        <h2>Come in.<br>Leave <em>grinning</em>.</h2>
+
+        <ul class="info-list">
+          <li>
+            <b>Where</b>
+            <p>Shop 4, Protea Glen Mall<br>Protea Glen, Soweto, 1819<br>Johannesburg, South Africa</p>
+          </li>
+          <li>
+            <b>Hours</b>
+            <div class="hours">
+              <b>Mon – Thu</b><span>09:00 – 19:00</span>
+              <b>Friday</b><span>09:00 – 20:00</span>
+              <b>Saturday</b><span>08:00 – 18:00</span>
+              <b>Sunday</b><span>09:00 – 15:00</span>
+            </div>
+          </li>
+          <li>
+            <b>Contact</b>
+            <p><a href="https://wa.me/27712345678">WhatsApp · 071 234 5678</a><br>
+               <a href="tel:+27712345678">Call · 071 234 5678</a><br>
+               <a href="mailto:hello@jannatandismail.co.za">hello@jannatandismail.co.za</a></p>
+          </li>
+        </ul>
+
+        <div class="hero-actions" style="margin-top:2.15rem">
+          <a class="btn btn--light" href="https://wa.me/27712345678?text=Hi%20Jannat%20%26%20Ismail%2C%20I'd%20like%20to%20book%20an%20appointment" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="btn" style="border-color:rgba(252,250,246,.4)" href="https://www.google.com/maps/search/?api=1&query=Protea+Glen+Mall" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </div>
+
+      <form class="form reveal" id="bookForm">
+        <h3>Request a booking</h3>
+        <p class="sub">Send it through and we'll confirm on WhatsApp within the hour.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="fname">Your name</label>
+            <input id="fname" name="name" type="text" required placeholder="e.g. Thandi Mokoena">
+          </div>
+          <div class="field">
+            <label for="fphone">WhatsApp number</label>
+            <input id="fphone" name="phone" type="tel" required placeholder="071 234 5678">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="fservice">Service</label>
+            <select id="fservice" name="service">
+              <option>Signature Cut</option>
+              <option>Skin Fade &amp; Line-Up</option>
+              <option>Beard Sculpt &amp; Hot Towel</option>
+              <option>Kids Cut</option>
+              <option>Braids — Cornrows &amp; Knotless</option>
+              <option>Wash, Blow-Dry &amp; Style</option>
+              <option>Colour &amp; Highlights</option>
+              <option>Makeup — Event &amp; Bridal</option>
+              <option>Manicure &amp; Pedicure</option>
+              <option>Facials &amp; Skincare</option>
+              <option>Threading &amp; Waxing</option>
+              <option>The Full Works</option>
+              <option>Not sure — please advise</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fdate">Preferred day</label>
+            <input id="fdate" name="date" type="text" placeholder="e.g. Sat morning">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fnotes">Anything we should know?</label>
+          <textarea id="fnotes" name="notes" rows="3" placeholder="Hair length, what you have in mind, references…"></textarea>
+        </div>
+
+        <button class="btn" type="submit">Send booking request</button>
+        <p class="tiny">This opens WhatsApp with your details ready to send.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="mark" href="#top" style="font-size:1.55rem">Jannat <span>&amp;</span> Ismail</a>
+        <p class="foot-blurb">Hair &amp; Beauty Experts — a family-run salon serving Protea Glen and the greater Soweto area since 2013.</p>
+      </div>
+      <div>
+        <h4>Salon</h4>
+        <ul>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#team">Meet the team</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Barbering &amp; fades</a></li>
+          <li><a href="#services">Braids &amp; styling</a></li>
+          <li><a href="#services">Colour &amp; treatments</a></li>
+          <li><a href="#services">Beauty &amp; skincare</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://wa.me/27712345678" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-word">Look good. <i>Feel looked-after.</i></div>
+
+    <div class="foot-bot">
+      <span>© <span id="year">2026</span> Jannat &amp; Ismail Hair &amp; Beauty Experts</span>
+      <span>Protea Glen · Soweto · Johannesburg</span>
+      <span><a href="#top">Back to top ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileNav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    })
+  );
+
+  // Scroll reveals
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Accordion
+  document.querySelectorAll('.acc-item').forEach(item => {
+    const btn = item.querySelector('.acc-q');
+    const panel = item.querySelector('.acc-a');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item.open').forEach(o => {
+        o.classList.remove('open');
+        o.querySelector('.acc-q').setAttribute('aria-expanded', 'false');
+        o.querySelector('.acc-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Service hover peek (desktop only)
+  const finePointer = window.matchMedia('(hover:hover) and (min-width:861px)').matches;
+  if (finePointer) {
+    const wrap = document.querySelector('.svc-wrap');
+    const peek = document.getElementById('peek');
+    const peekImg = peek.querySelector('img');
+    document.querySelectorAll('.svc-row').forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        peekImg.src = row.dataset.img;
+        peek.classList.add('show');
+      });
+      row.addEventListener('mouseleave', () => peek.classList.remove('show'));
+    });
+    wrap.addEventListener('mousemove', (e) => {
+      const r = wrap.getBoundingClientRect();
+      peek.style.left = (e.clientX - r.left) + 'px';
+      peek.style.top = (e.clientY - r.top) + 'px';
+    });
+  }
+
+  // Booking form → WhatsApp
+  const form = document.getElementById('bookForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const msg =
+      `Hi Jannat & Ismail! I'd like to book.\n\n` +
+      `Name: ${d.get('name')}\n` +
+      `Phone: ${d.get('phone')}\n` +
+      `Service: ${d.get('service')}\n` +
+      `Preferred day: ${d.get('date') || 'flexible'}\n` +
+      `Notes: ${d.get('notes') || '—'}`;
+    window.open('https://wa.me/27712345678?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
